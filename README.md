@@ -1,16 +1,42 @@
-# React + Vite
+CLEMONT - Tienda Virtual Responsiva
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+CLEMONT es una aplicación web moderna de comercio electrónico desarrollada con React y Material UI. La plataforma ofrece una experiencia de usuario fluida, permitiendo a los clientes navegar por un catálogo de productos, gestionar favoritos y controlar un carrito de compras interactivo con persistencia de datos.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## React Compiler
+Características Principales
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Interfaz Ultra-Responsiva: Diseño adaptado para dispositivos móviles, tablets y escritorio.
+Gestión de Favoritos: Sistema de guardado de productos preferidos mediante localStorage.
+Carrito de Compras Dinámico: Contador de productos con estilo "Badge" integrado.
+    * Cálculo automático del total de la compra.
+    * Ajuste de cantidades (suma/resta) y eliminación individual o total.
+Gestión de Cuenta: Formulario de inicio de sesión y registro con validaciones visuales.
+Navegación Intuitiva: Barra de navegación fija con indicadores de estado en tiempo real.
+Estética Coherente: Uso de una paleta de colores personalizada (Negro y Naranja #FFA726) para fortalecer la identidad de marca.
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+Interfaz Gráfica
+
+La interfaz se centra en la claridad y la accesibilidad:
+1.Home/Artículos: Grid dinámico que muestra 2 columnas en móviles y 4 en escritorio.
+2.Favoritos: Vista limpia de productos guardados con acceso rápido al carrito.
+3.Carrito: Desglose detallado de productos con bordes destacados y controles de cantidad ergonómicos.
+
+
+
+Arquitectura del Proyecto
+
+El proyecto sigue una estructura modular basada en componentes funcionales de React:
+
+
+src/
+├── components/          # Componentes reutilizables (Navbar, Footer, etc.)
+├── views/               # Páginas principales del proyecto
+│   ├── Articles.jsx     # Catálogo de productos
+│   ├── Myfavorite.jsx   # Vista de productos guardados
+│   ├── Mycart.jsx       # Lógica y vista del carrito de compras
+│   └── Myaccount.jsx    # Autenticación y perfil
+├── App.js               # Enrutador y configuración principal
+└── main.js              # Punto de entrada de la aplicación
