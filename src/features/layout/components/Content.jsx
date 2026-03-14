@@ -1,5 +1,6 @@
 import React from "react";
-import { Typography, Box, Card, CardMedia, CardContent, Container } from "@mui/material";
+import { Typography, Box, Card, CardMedia, CardContent, Container, Button } from "@mui/material";
+import GitHubIcon from '@mui/icons-material/GitHub'; // Asegúrate de tener instalado @mui/icons-material
 
 export const Content = () => {
 
@@ -25,7 +26,7 @@ export const Content = () => {
           pb: 2,
           scrollSnapType: "x mandatory",
           "&::-webkit-scrollbar": { display: "none" },
-          px: { xs: 2, md: 0 } // Padding para que no toque los bordes en móvil
+          px: { xs: 2, md: 0 } 
         }}
       >
         {items.map((cat) => (
@@ -66,7 +67,7 @@ export const Content = () => {
   );
 
   return (
-    <Container maxWidth="lg" sx={{ px: { xs: 1, sm: 2 } }}>
+    <Container maxWidth="lg" sx={{ px: { xs: 1, sm: 2 }, pb: 8 }}>
 
       {/* Banner con borde naranja */}
       <Box sx={{ textAlign: "center", mt: 4, mb: 6 }}>
@@ -95,7 +96,8 @@ export const Content = () => {
         <Typography
           variant="h3"
           sx={{
-            fontSize: { xs: "1.5rem", md: "2.8rem" }
+            fontSize: { xs: "1.5rem", md: "2.8rem" },
+            fontWeight: "bold"
           }}
         >
           TIENDA DE ROPA
@@ -123,6 +125,34 @@ export const Content = () => {
         { name: "TOP", img: "/img/top.png" },
         { name: "SHORT", img: "/img/short.png" }
       ])}
+
+      {/* SECCIÓN GITHUB AL FINAL */}
+      <Box sx={{ display: "flex", justifyContent: "center", mt: 5 }}>
+        <Button
+          variant="contained"
+          startIcon={<GitHubIcon />}
+          href="https://github.com/HannahMV-bot/P-gina-Web.git"
+          target="_blank"
+          rel="noopener noreferrer"
+          sx={{
+            backgroundColor: "black",
+            color: "white",
+            fontWeight: "bold",
+            padding: "12px 24px",
+            borderRadius: "50px",
+            textTransform: "none",
+            fontSize: "1rem",
+            border: "2px solid #ED6C02",
+            '&:hover': {
+              backgroundColor: "#333",
+              boxShadow: "0px 0px 15px #ED6C02",
+              border: "2px solid white"
+            }
+          }}
+        >
+          Ver Proyecto en GitHub
+        </Button>
+      </Box>
 
     </Container>
   );
